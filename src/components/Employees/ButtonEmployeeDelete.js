@@ -15,7 +15,7 @@ const ButtonEmployeeDelete = ({ id, employees, setEmployees }) => {
 
   const handleDelete = async (e) => {
     e.preventDefault();
-    const res = await fetch(`/api/employees/${id}`, {
+    const res = await fetch(`${process.env.NODE_ENV === 'production' ? 'https://my-personnel-backend.herokuapp.com' : 'https://my-personnel-backend.herokuapp.com'}/api/employees/${id}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${localStorage.getItem(

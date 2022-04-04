@@ -5,7 +5,7 @@ const DropdownDepartment = ({ value, setFunction }) => {
 
   useEffect(() => {
     const fetchDepartments = async () => {
-      const res = await fetch("/api/departments");
+      const res = await fetch(`${process.env.NODE_ENV === 'production' ? 'https://my-personnel-backend.herokuapp.com' : 'https://my-personnel-backend.herokuapp.com'}/api/departments`);
       const data = await res.json();
       setDepartments(data);
     };

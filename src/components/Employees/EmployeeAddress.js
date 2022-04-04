@@ -26,7 +26,7 @@ const Address = ({ employee, employees, setEmployees }) => {
     employeeObject.address.zip = zip;
     employeeObject.address.country = country;
 
-    const res = await fetch(`/api/employees/${employee._id}`, {
+    const res = await fetch(`${process.env.NODE_ENV === 'production' ? 'https://my-personnel-backend.herokuapp.com' : 'https://my-personnel-backend.herokuapp.com'}/api/employees/${employee._id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

@@ -9,7 +9,7 @@ const DemoLogin = () => {
       _id: '62183672fe76c4271819c360',
     };
 
-    const res = await fetch("api/login", {
+    const res = await fetch(`${process.env.NODE_ENV === 'production' ? 'https://my-personnel-backend.herokuapp.com' : 'https://my-personnel-backend.herokuapp.com'}/api/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

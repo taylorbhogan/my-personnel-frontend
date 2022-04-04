@@ -14,7 +14,7 @@ const Employees = ({ employees, setEmployees }) => {
       const employeeObject = {};
 
       try {
-        const res = await fetch("/api/employees", {
+        const res = await fetch(`${process.env.NODE_ENV === 'production' ? 'https://my-personnel-backend.herokuapp.com' : 'https://my-personnel-backend.herokuapp.com'}/api/employees`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem(
               "MY_PERSONNEL_ACCESS_TOKEN"

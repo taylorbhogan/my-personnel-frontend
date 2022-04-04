@@ -59,7 +59,7 @@ const NewEmployeeForm = ({ employees, setEmployees, setShowModal }) => {
       directSupervisor: "62183672fe76c4271819c360",
     };
 
-    const res = await fetch("/api/employees", {
+    const res = await fetch(`${process.env.NODE_ENV === 'production' ? 'https://my-personnel-backend.herokuapp.com' : 'https://my-personnel-backend.herokuapp.com'}/api/employees`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
